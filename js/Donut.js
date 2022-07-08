@@ -27,6 +27,7 @@ class Donut{
 
     purchaseMultiplier() {
         this._count -= this._multiplierCost;
+        this._multiplierCost *= 1.1;
         this._multiplierCount++;
         alert(Math.round(this._multiplierCost));               
      }
