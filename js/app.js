@@ -16,17 +16,17 @@ multiplierCountEl.innerHTML = donut._multiplierCount;
 
 const makeBtn = document.querySelector("#make");
 makeBtn.addEventListener("click", () => {
-    donut._count++;
+    donut.click();
     countEl.innerHTML = Math.round(donut._count);
 })
 
 const clickerPurchaseBtn = document.querySelector("#autoClickerPuchase");
 clickerPurchaseBtn.addEventListener("click", () => {
-    if (donut._count >= donut._autoClickCost) {
+    if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
         donut.purchaseAutoClicker();
     }
     else {
-            alert("Oops! You need " + (donut._autoClickCost - donut._count) + " more donuts to purchase this!");
+            alert("Oops! You need " + Math.round(donut._autoClickCost - donut._count) + " more donuts to purchase this!");
     }
     autoClickCountEl.innerHTML = donut._autoClickCount;
     countEl.innerHTML = Math.round(donut._count);
@@ -34,20 +34,20 @@ clickerPurchaseBtn.addEventListener("click", () => {
 
 const multiplierPurchaseBtn = document.querySelector("#multiplierPurchase");
 multiplierPurchaseBtn.addEventListener("click", () => {
-    if (donut._count >= donut._multiplierCost) {
+    if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
         donut.purchaseMultiplier();
         multiplierCountEl.innerHTML = donut._multiplierCount;
         countEl.innerHTML = Math.round(donut._count);
     }
     else {
-            alert("Oops! You need " + (donut._multiplierCost - donut._count) + " more donuts to purchase this!");
+            alert("Oops! You need " + Math.round(donut._multiplierCost - donut._count) + " more donuts to purchase this!");
     }
     multiplierCountEl.innerHTML = donut._multiplierCount;
     countEl.innerHTML = Math.round(donut._count);
 })
 
 setInterval(() => {
-    donut._count += donut._autoClickCount;
+    donut._count += donut._autoClickCount * donut._makeValue;
     countEl.innerText = Math.round(donut._count);
 }, 1000);
 

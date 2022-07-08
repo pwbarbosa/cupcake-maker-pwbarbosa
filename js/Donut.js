@@ -5,6 +5,7 @@ class Donut{
         this._autoClickCost = 100;
         this._multiplierCount = 0;
         this._multiplierCost = 10;
+        this._makeValue = 1;
     }
 
     get count() {
@@ -15,7 +16,7 @@ class Donut{
     }
 
     click() {
-        this._count++;
+        this._count += this._makeValue;
     }
 
     purchaseAutoClicker() {
@@ -28,8 +29,9 @@ class Donut{
     purchaseMultiplier() {
         this._count -= this._multiplierCost;
         this._multiplierCost *= 1.1;
+        this._makeValue *= 1.2;
         this._multiplierCount++;
-        alert(Math.round(this._multiplierCost));               
+        alert((this._makeValue));               
      }
 
 
