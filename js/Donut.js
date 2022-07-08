@@ -16,19 +16,23 @@ class Donut{
         this._count++;
     }
 
+    // activateAutoClicker() {
+    //     setInterval(() => {
+    //         for(let i = 0; i < this._autoClickCount; i++) {
+    //             this._count++;
+    //         }
+    //     }, 1000);
+    // }
     purchaseAutoClicker() {
-        if (this._count >= this._autoClickCost) {
             this._count -= this._autoClickCost;
             this._autoClickCost *= 1.1;
             this._autoClickCount++;
-        }
-        else {
-            alert("Oops! You need " + (this._autoClickCost - this._count) + " more donuts to purchase this!");
-        }
-        
-
-
+            alert(this._autoClickCost);        
+       
     }
+
+    
+    
 
 }
 

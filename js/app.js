@@ -17,8 +17,19 @@ makeBtn.addEventListener("click", () => {
 
 const clickerPurchaseBtn = document.querySelector("#autoClickerPuchase");
 clickerPurchaseBtn.addEventListener("click", () => {
-    donut.purchaseAutoClicker();
+    if (donut._count >= donut._autoClickCost) {
+        donut.purchaseAutoClicker();
+    }
+    else {
+            alert("Oops! You need " + (donut._autoClickCost - donut._count) + " more donuts to purchase this!");
+    }
     autoClickCountEl.innerHTML = donut._autoClickCount;
     countEl.innerHTML = donut._count;
 })
+
+setInterval(() => {
+    donut._count += donut._autoClickCount;
+    countEl.innerText = donut.count;
+}, 1000);
+
 
