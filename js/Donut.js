@@ -3,6 +3,8 @@ class Donut{
         this._count = 90;
         this._autoClickCount = 0;
         this._autoClickCost = 100;
+        this._multiplierCount = 0;
+        this._multiplierCost = 10;
     }
 
     get count() {
@@ -16,19 +18,20 @@ class Donut{
         this._count++;
     }
 
-    // activateAutoClicker() {
-    //     setInterval(() => {
-    //         for(let i = 0; i < this._autoClickCount; i++) {
-    //             this._count++;
-    //         }
-    //     }, 1000);
-    // }
     purchaseAutoClicker() {
             this._count -= this._autoClickCost;
             this._autoClickCost *= 1.1;
             this._autoClickCount++;
             alert(Math.round(this._autoClickCost));               
     }
+
+    purchaseMultiplier() {
+        this._count -= this._multiplierCost;
+        this._multiplierCount++;
+        alert(Math.round(this._multiplierCost));               
+     }
+
+
 
 
     
