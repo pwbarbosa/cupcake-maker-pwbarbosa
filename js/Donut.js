@@ -27,9 +27,9 @@ class Donut{
             this._count -= this._autoClickCost;
             this._autoClickCost *= 1.1;
             this._autoClickCount++;
-            alert(this._autoClickCost);        
-       
+            alert(Math.round(this._autoClickCost));               
     }
+
 
     
     

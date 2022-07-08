@@ -12,7 +12,7 @@ autoClickCountEl.innerHTML = donut._autoClickCount;
 const makeBtn = document.querySelector("#make");
 makeBtn.addEventListener("click", () => {
     donut._count++;
-    countEl.innerHTML = donut._count;
+    countEl.innerHTML = Math.round(donut._count);
 })
 
 const clickerPurchaseBtn = document.querySelector("#autoClickerPuchase");
@@ -24,12 +24,12 @@ clickerPurchaseBtn.addEventListener("click", () => {
             alert("Oops! You need " + (donut._autoClickCost - donut._count) + " more donuts to purchase this!");
     }
     autoClickCountEl.innerHTML = donut._autoClickCount;
-    countEl.innerHTML = donut._count;
+    countEl.innerHTML = Math.round(donut._count);
 })
 
 setInterval(() => {
     donut._count += donut._autoClickCount;
-    countEl.innerText = donut.count;
+    countEl.innerText = Math.round(donut._count);
 }, 1000);
 
 
