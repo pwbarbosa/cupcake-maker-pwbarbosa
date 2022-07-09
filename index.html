@@ -4,25 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donut Clicker</title>
+    <title>Cupcake Clicker</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
   </head>
   <body>
     <header>
-      <h1 id="pageTitle">Ermergherd! <br> Merv's Dernerts!</h1>
+      <h1 id="pageTitle">Connie's Cupcakes</h1>
+      <div class="dropdown">
+        <button class="dropbtn">Our Inspiration</button>
+        <div class="dropdown-content">
+          <a href="https://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>
+        </div>
+      </div>
 
     </header>
     <div class="container">
       <section id="donutClickerSection">
-        <button id="make">Donut</button>
-        <h3 id="count">Donuts Made</h3>
+        <button id="make">Cupcake</button>
+        <h3 id="count">Cupcakes Made</h3>
       </section>
       <section id="autoClickerSection">
         <button id="autoClickerPuchase">Purchase an Auto-Clicker</button>
         <h3 id="clickersPurchased">Auto-Clickers Purchased</h3>
+        <h3 id="clickerCost"></h3>
       </section>
       <section id="clickMultiplierSection">
         <button id="multiplierPurchase">Purchase a Click Multiplier</button>
         <h3 id="multipliersPurchased">Click Multipliers Purchased</h3>
+        <h3 id="multiplierCost"></h3>
       </section>
     </div>
     <script src="/js/app.js" type="module"></script>

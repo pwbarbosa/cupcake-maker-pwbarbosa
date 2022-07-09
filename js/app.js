@@ -2,16 +2,16 @@ import Donut from "./Donut.js"
 
 const countEl = document.querySelector("#count");
 const autoClickCountEl = document.querySelector("#clickersPurchased")
-// const autoClickCostEl = document.querySelector("#clickerCost");
+const clickerCostEl = document.querySelector("#clickerCost");
 const multiplierCountEl = document.querySelector("#multipliersPurchased");
-// const multiplierCostEl = document.querySelector("#multiplierCost")
+const multiplierCostEl = document.querySelector("#multiplierCost")
 const donut = new Donut();
 
 countEl.innerHTML = donut.count;
 autoClickCountEl.innerHTML = donut._autoClickCount;
-// autoClickCostEl.innerHTML = donut._autoClickCost;
+clickerCostEl.innerHTML = donut._autoClickCost;
 multiplierCountEl.innerHTML = donut._multiplierCount;
-// multiplierCostEl.innerHTML = donut._autoClickCost;
+multiplierCostEl.innerHTML = donut._multiplierCost;
 
 
 const makeBtn = document.querySelector("#make");
@@ -30,6 +30,8 @@ clickerPurchaseBtn.addEventListener("click", () => {
     }
     autoClickCountEl.innerHTML = donut._autoClickCount;
     countEl.innerHTML = Math.round(donut._count);
+    clickerCostEl.innerHTML = Math.round(donut._autoClickCost);
+
 })
 
 const multiplierPurchaseBtn = document.querySelector("#multiplierPurchase");
@@ -44,6 +46,8 @@ multiplierPurchaseBtn.addEventListener("click", () => {
     }
     multiplierCountEl.innerHTML = donut._multiplierCount;
     countEl.innerHTML = Math.round(donut._count);
+    multiplierCostEl.innerHTML = Math.round(donut._multiplierCost);
+
 })
 
 setInterval(() => {
