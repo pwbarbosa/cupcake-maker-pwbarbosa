@@ -1,3 +1,6 @@
+body {
+    width: 100%;
+}
 header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -11,7 +14,6 @@ header h1 {
     grid-column-end: 4;
     text-align: center;
     width: 40%;
-
 }
 #inspirationDrp {
     grid-column-start: 1;
@@ -21,42 +23,87 @@ header h1 {
     grid-column-start: 2;
 }
 
-/* .dropdown {
-    grid-column-start: 3;
-    margin-right: 0;
-} */
-
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
+    width: 100%;
+    align-items: end;
     height: 75vh;
-    align-items: center;
+    /* margin-top: 5rem; */
+}
+
+#clickMultiplierSection {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: center;
+}
+
+#multiplierPurchase {
+    width: 15vw;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0 auto;
+    position: relative;
+    left: 15%;
+    top: 5%;
+}
+
+#multiplierDiv {
+    position: absolute;
+    width: 15%;
+    top: 42%;
+    left: 12.5%;
+    padding: .5em;
 }
 
 #donutClickerSection {
-    grid-column-start: 2;
     text-align: center;
-}
-
-#autoClickerSection img {
-    width: 31rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 #make {
-    width: 20rem;
+    width: 30vw;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0 auto;
+    position: relative;
+    top: -10%;
 }
 
-/* #cupcakePic {
-    grid-column-start: 2;
-
-} */
-
-#clickMultiplierSection {
-    grid-column-start: 3;
-    text-align: center;
+#countDiv {
+    position: absolute;
+    width: 10%;
+    top: 85%;
+    left: 43%;
+    padding: .5em;
 }
 
 #autoClickerSection {
-    grid-column-start: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#autoClickerSection img {
+    width: 31vw;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0 auto;
+    position: relative;
+    right: 30%;
+    top: 10%;
+}
+#autoClickerDiv {
+    position: absolute;
+    width: 15%;
+    top: 35%;
+    right: 2.5%;
+    padding: .6em;
 }

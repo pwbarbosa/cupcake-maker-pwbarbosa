@@ -15,9 +15,14 @@ multiplierCostEl.innerHTML = donut._multiplierCost;
 
 
 const makeBtn = document.querySelector("#make");
+
 makeBtn.addEventListener("click", () => {
     donut.click();
     countEl.innerHTML = Math.round(donut._count);
+    if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
+        
+    }
+    
 })
 
 const clickerPurchaseBtn = document.querySelector("#autoClickerPuchase");

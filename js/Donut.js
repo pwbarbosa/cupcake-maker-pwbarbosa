@@ -1,6 +1,6 @@
 class Donut{
     constructor() {
-        this._count = 90;
+        this._count = 0;
         this._autoClickCount = 0;
         this._autoClickCost = 100;
         this._multiplierCount = 0;

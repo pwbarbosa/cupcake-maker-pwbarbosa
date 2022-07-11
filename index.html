@@ -31,19 +31,32 @@
       </div>
     </header>
     <div class="container">
-      <section id="autoClickerSection">
-        <img id="autoClickerPuchase" src="/images/Baker.png">Purchase an Auto-Clicker</img>
-        <h3 id="clickersPurchased">Auto-Clickers Purchased</h3>
-        <h3 id="clickerCost"></h3>
+      <section id="clickMultiplierSection">
+        <img class="unavailable" id="multiplierPurchase" src="/images/CartoonOven.png" alt="Oven Button">
+        <div class="unavailable" id="multiplierDiv">
+          <h3>Oven Level:</h3>
+          <h3 id="multipliersPurchased">Click Multipliers Purchased</h3>
+          <h3>Upgrade Cost:</h3>
+          <h3 id="multiplierCost"></h3>
+        </div>
       </section>
       <section id="donutClickerSection">
-        <a id="makeA"><img id="make" id="cupcakePic" src="/images/Cupcake.png" alt="Cupcake Clicker Button"></a>
-        <h3 id="count">Cupcakes Made</h3>
+        <img id="make" id="cupcakePic" src="/images/Cupcake.png" alt="Cupcake Clicker Button">
+        <div id="countDiv">
+          <h3 id="countText">Cupcakes:</h3>
+          <h3 id="count">Cupcakes Made</h3>
+        </div>
       </section>
-      <section id="clickMultiplierSection">
-        <button id="multiplierPurchase">Purchase a Click Multiplier</button>
-        <h3 id="multipliersPurchased">Click Multipliers Purchased</h3>
-        <h3 id="multiplierCost"></h3>
+        
+      </section>
+      <section id="autoClickerSection">
+        <div class="unavailable" id="autoClickerDiv">
+          <h3>Baker Level:</h3>
+          <h3 id="clickersPurchased">Auto-Clickers Purchased</h3>
+          <h3>Upgrade Cost:</h3>
+          <h3 id="clickerCost"></h3>
+        </div>
+        <img class="unavailable" id="autoClickerPuchase" src="/images/Baker.png" alt="Baker Button">
       </section>
     </div>
     <script src="/js/app.js" type="module"></script>
