@@ -1,34 +1,60 @@
 header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    width: 100vw;    
+    width: 65vw;    
     align-items: center;
     justify-items: center;
+    margin: 0 auto;
 }
 header h1 {
-    grid-column-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
     text-align: center;
+    width: 40%;
+
+}
+#inspirationDrp {
+    grid-column-start: 1;
 }
 
-.dropdown {
+#abtDev {
+    grid-column-start: 2;
+}
+
+/* .dropdown {
     grid-column-start: 3;
     margin-right: 0;
-}
+} */
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr 1frk;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    height: 80vh;
+    height: 75vh;
     align-items: center;
 }
 
 #donutClickerSection {
     grid-column-start: 2;
+    text-align: center;
 }
+
+#autoClickerSection img {
+    width: 31rem;
+}
+
+#make {
+    width: 20rem;
+}
+
+/* #cupcakePic {
+    grid-column-start: 2;
+
+} */
 
 #clickMultiplierSection {
     grid-column-start: 3;
+    text-align: center;
 }
 
 #autoClickerSection {

@@ -1,8 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@100&family=Work+Sans:wght@100;200&display=swap');
+
+* {
+  margin: 0;
+}
+body {
+  background-image: url("/images/Bakery\ 1.jpg");
+  background-size: cover;
+  background-color: black;
+  background-repeat: no-repeat;
+}
+
+header {
+  background-color: rgb(248, 191, 201) ;
+  color: purple;
+  border: solid rgb(252, 240, 240) 15px;
+  border-radius: 5px;
+}
+
+header h1 {
+  font-family: 'Oleo Script', cursive;
+  background-color: rgb(248, 191, 201) ;
+  color: purple;
+  /* border: solid rgb(252, 240, 240) 15px; */
+  padding: 16px;
+  font-size: 40px;
+  margin-bottom: -20px;
+}
+
 .dropbtn {
-    background-color: #04AA6D;
-    color: white;
+    font-family: 'Taviraj', serif;
+    background-color: transparent ;
+    color: purple;
+    /* border: solid rgb(252, 240, 240) 15px; */
     padding: 16px;
-    font-size: 16px;
+    font-size: 24px;
     border: none;
   }
   
@@ -31,4 +63,22 @@
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {
+    transform: scale(1.2);
+    /* background-color: #3e8e41; */
+    /* border: solid white; */
+  }
+
+  header h1 {
+
+  }
+
+  #make {
+    border: none;
+    background-color: transparent;
+  }
+
+
+  #makeA img:hover {
+    transform: scale(1.1);
+  }

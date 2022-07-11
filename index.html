@@ -10,11 +10,17 @@
   </head>
   <body>
     <header>
-      <h1 id="pageTitle">Connie's Cupcakes</h1>
-      <div class="dropdown">
+      <h1 id="pageTitle">Carlo's Cupcakes</h1>
+      <div id="inspirationDrp" class="dropdown">
         <button class="dropbtn">Our Inspiration</button>
         <div class="dropdown-content">
-          <a href="https://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>
+          <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>
+        </div>
+      </div>
+      <div id="abtDev" class="dropdown">
+        <button class="dropbtn">The Developer</button>
+        <div class="dropdown-content">
+          <a href="#">Pedro Barbosa</a>
         </div>
       </div>
       <div class="dropdown">
@@ -25,14 +31,14 @@
       </div>
     </header>
     <div class="container">
-      <section id="donutClickerSection">
-        <button id="make">Cupcake</button>
-        <h3 id="count">Cupcakes Made</h3>
-      </section>
       <section id="autoClickerSection">
-        <button id="autoClickerPuchase">Purchase an Auto-Clicker</button>
+        <img id="autoClickerPuchase" src="/images/Baker.png">Purchase an Auto-Clicker</img>
         <h3 id="clickersPurchased">Auto-Clickers Purchased</h3>
         <h3 id="clickerCost"></h3>
+      </section>
+      <section id="donutClickerSection">
+        <a id="makeA"><img id="make" id="cupcakePic" src="/images/Cupcake.png" alt="Cupcake Clicker Button"></a>
+        <h3 id="count">Cupcakes Made</h3>
       </section>
       <section id="clickMultiplierSection">
         <button id="multiplierPurchase">Purchase a Click Multiplier</button>
