@@ -93,16 +93,25 @@ header h1 {
     filter: none;
   }
 
-
+  #reset {
+    cursor:pointer;
+    background-color: rgb(248, 191, 201) ;
+    color: purple;
+    border: solid rgb(252, 240, 240) 15px;
+    border-radius: 5px;
+    text-align: center;
+  }
 
   .container {
     cursor: url("/images/OvenMit.png");
   }
 
   #make:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
-
+  #multiplierPurchase {
+    cursor: pointer;
+  }
   #multiplierDiv {
     background-color: rgb(248, 191, 201) ;
     color: purple;
@@ -118,11 +127,18 @@ header h1 {
     padding: 10px;
   }
 
+  #make {
+    cursor:pointer;
+  }
   #countDiv {
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
+  }
+
+  #autoClickerSection img {
+    cursor: pointer;
   }
 
   #autoClickerDiv {
@@ -137,4 +153,5 @@ header h1 {
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
+    padding: 10px;
   }

@@ -23,6 +23,13 @@ header h1 {
     grid-column-start: 2;
 }
 
+#reset {
+    width: 5%;
+    position: absolute;
+    top: 6%;
+    left: 4%;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -67,7 +74,11 @@ header h1 {
     position: absolute;
     width: 15%;
     left: 12.4%;
-    top: 57%
+    top: 53%
+}
+
+#multiplierPurchase.unavailable:hover #multiplierInfo {
+    display:grid;
 }
 
 #donutClickerSection {
@@ -115,7 +126,7 @@ header h1 {
 }
 
 #autoClickerSection img {
-    width: 31vw;
+    width: 13vw;
     grid-row-start: 1;
     grid-row-end: 3;
     margin: 0 auto;
@@ -125,7 +136,7 @@ header h1 {
 }
 
 #autoClickerSection img.available:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 
