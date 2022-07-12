@@ -50,12 +50,24 @@ header h1 {
     top: 5%;
 }
 
+#multiplierPurchase.available:hover {
+    transform: scale(1.1);
+}
+
 #multiplierDiv {
+
     position: absolute;
     width: 15%;
     top: 42%;
     left: 12.5%;
     padding: .5em;
+}
+
+#multiplierInfo {
+    position: absolute;
+    width: 15%;
+    left: 12.4%;
+    top: 57%
 }
 
 #donutClickerSection {
@@ -76,12 +88,23 @@ header h1 {
 }
 
 #countDiv {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     position: absolute;
-    width: 10%;
-    top: 85%;
-    left: 43%;
+    min-width: 12%;
+    top: 76%;
+    left: 42%;
     padding: .5em;
 }
+
+#countText {
+    grid-row-start: 1;
+}
+
+#clickValue {
+    grid-row-start: 2;
+}
+
 
 #autoClickerSection {
     display: grid;
@@ -100,10 +123,28 @@ header h1 {
     right: 30%;
     top: 10%;
 }
+
+#autoClickerSection img.available:hover {
+    transform: scale(1.05);
+}
+
+
+
 #autoClickerDiv {
     position: absolute;
     width: 15%;
     top: 35%;
     right: 2.5%;
     padding: .6em;
+}
+
+#autoClickerInfo {
+    position: absolute;
+    width: 15%;
+    right: 17.5%;
+    top: 57%;
+}
+
+#autoClickerSection img.unavailable:hover #autoClickerInfo {
+    display: grid;
 }

@@ -26,7 +26,7 @@
       <div class="dropdown">
         <button class="dropbtn">About Us</button>
         <div class="dropdown-content">
-          <a href="#">Some information about the Company: <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit blanditiis corrupti beatae impedit modi exercitationem incidunt, accusantium, maiores sunt dolores quia ex dolorem vitae nisi fugiat, suscipit officiis expedita. Similique!</a>
+          <p>Some information about the Company: <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit blanditiis corrupti beatae impedit modi exercitationem incidunt, accusantium, maiores sunt dolores quia ex dolorem vitae nisi fugiat, suscipit officiis expedita. Similique!</p>
         </div>
       </div>
     </header>
@@ -34,29 +34,33 @@
       <section id="clickMultiplierSection">
         <img class="unavailable" id="multiplierPurchase" src="/images/CartoonOven.png" alt="Oven Button">
         <div class="unavailable" id="multiplierDiv">
-          <h3>Oven Level:</h3>
           <h3 id="multipliersPurchased">Click Multipliers Purchased</h3>
-          <h3>Upgrade Cost:</h3>
           <h3 id="multiplierCost"></h3>
+        </div>
+        <div id="multiplierInfo">
+          <h3>Pastry Oven</h3>
+          <p id="multiplierCostRemainder"></p>
+          <p>You can buy access to a pastry oven to make more cupcakes at a time. <br>Upgrade your oven to make more cupcakes at a time.</p>
         </div>
       </section>
       <section id="donutClickerSection">
         <img id="make" id="cupcakePic" src="/images/Cupcake.png" alt="Cupcake Clicker Button">
         <div id="countDiv">
-          <h3 id="countText">Cupcakes:</h3>
           <h3 id="count">Cupcakes Made</h3>
+          <h3 id="makeValue">Click Value</h3>
         </div>
-      </section>
-        
       </section>
       <section id="autoClickerSection">
         <div class="unavailable" id="autoClickerDiv">
-          <h3>Baker Level:</h3>
           <h3 id="clickersPurchased">Auto-Clickers Purchased</h3>
-          <h3>Upgrade Cost:</h3>
           <h3 id="clickerCost"></h3>
         </div>
         <img class="unavailable" id="autoClickerPuchase" src="/images/Baker.png" alt="Baker Button">
+        <div id="autoClickerInfo">
+          <h3>Pastry Chef</h3>
+          <p>You can hire a pastry chef to continue making cupcakes in the background. <br>Upgrade your chef to make more cupcakes at a time.</p>
+          <p id="autoClickerCostRemainder"></p>
+        </div>
       </section>
     </div>
     <script src="/js/app.js" type="module"></script>

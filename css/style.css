@@ -32,7 +32,6 @@ header h1 {
     font-family: 'Taviraj', serif;
     background-color: transparent ;
     color: purple;
-    /* border: solid rgb(252, 240, 240) 15px; */
     padding: 2px;
     font-size: 20px;
     border: none;
@@ -47,7 +46,9 @@ header h1 {
   .dropdown-content {
     display: none;
     position: absolute;
-    transform: translate(-65px, 0px);
+    text-align: center;
+
+    transform: translate(-64px, 0px);
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
     background-color: rgb(248, 191, 201) ;
@@ -57,15 +58,17 @@ header h1 {
     z-index: 1;
   }
   
-  .dropdown-content a {
+  .dropdown-content p, a {
     color: purple;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-  
-  .dropdown-content a:hover {background-color: #ddd;}
-  
+
+  .dropdown-content a:hover {
+    transform: scale(1.2);
+  }
+    
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {
@@ -74,9 +77,23 @@ header h1 {
     /* border: solid white; */
   }
 
+  .hidden {
+    display: none;
+  }
+
   .unavailable {
     filter: grayscale() blur(5px);
   }
+
+  .unavailable:hover {
+    filter: grayscale() blur(9px);
+  }
+
+  .available {
+    filter: none;
+  }
+
+
 
   .container {
     cursor: url("/images/OvenMit.png");
@@ -93,6 +110,14 @@ header h1 {
     border-radius: 5px;
   }
 
+  #multiplierInfo {
+    background-color: rgb(248, 191, 201) ;
+    color: purple;
+    border: solid rgb(252, 240, 240) 15px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
   #countDiv {
     background-color: rgb(248, 191, 201) ;
     color: purple;
@@ -101,6 +126,13 @@ header h1 {
   }
 
   #autoClickerDiv {
+    background-color: rgb(248, 191, 201) ;
+    color: purple;
+    border: solid rgb(252, 240, 240) 15px;
+    border-radius: 5px;
+  }
+
+  #autoClickerInfo {
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;

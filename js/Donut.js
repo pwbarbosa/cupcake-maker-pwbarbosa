@@ -1,6 +1,6 @@
 class Donut{
     constructor() {
-        this._count = 0;
+        this._count = 95;
         this._autoClickCount = 0;
         this._autoClickCost = 100;
         this._multiplierCount = 0;
@@ -22,16 +22,14 @@ class Donut{
     purchaseAutoClicker() {
             this._count -= this._autoClickCost;
             this._autoClickCost *= 1.1;
-            this._autoClickCount++;
-            alert(Math.round(this._autoClickCost));               
+            this._autoClickCount++;              
     }
 
     purchaseMultiplier() {
         this._count -= this._multiplierCost;
         this._multiplierCost *= 1.1;
         this._makeValue *= 1.2;
-        this._multiplierCount++;
-        alert((this._makeValue));               
+        this._multiplierCount++;              
      }
 
 
