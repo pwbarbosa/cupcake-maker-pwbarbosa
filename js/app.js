@@ -16,8 +16,11 @@ const autoClickerInfoEl = document.querySelector("#autoClickerInfo");
 const multiplierInfoEl = document.querySelector("#multiplierInfo");
 const autoClickerCostRemainderEl = document.querySelector("#autoClickerCostRemainder");
 const multiplierCostRemainderEl = document.querySelector("#multiplierCostRemainder");
-
+const randomOneTitleEl = document.querySelector("#randomOneTitle");
+const randomOneContenEl = document.querySelector("#randomOneContent");
+const randomOneTimerEl = document.querySelector("#randomOneTimer");
 const donut = new Donut();
+let seconds = 0;
 
 countEl.innerHTML = "Cupcakes: " + donut.count;
 autoClickCountEl.innerHTML = "Chef Level: " + donut._autoClickCount;
@@ -26,19 +29,19 @@ multiplierCountEl.innerHTML = "Oven Level: " + donut._multiplierCount;
 multiplierCostEl.innerHTML = "Upgrade Cost: " + donut._multiplierCost;
 makeValueEl.innerHTML = (Math.round(donut._makeValue * 1000000) / 1000000);
 
-
 const makeBtn = document.querySelector("#make");
 makeBtn.addEventListener("click", () => {
     donut.click();
     resetBtn.classList.remove("hidden");
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
-    multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";    if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
+    multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";    
+    if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("unavailable");    
         ovenEl.classList.add("available");
+        multiplierInfoEl.classList.add("hidden");
         ovenDivEl.classList.remove("unavailable");
         ovenDivEl.classList.add("available");
-        multiplierInfoEl.classList.add("hidden");
     }
     if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
         bakerEl.classList.remove("unavailable");    
@@ -63,16 +66,17 @@ clickerPurchaseBtn.addEventListener("click", () => {
     if (Math.round(donut._count) <= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("available");    
         ovenEl.classList.add("unavailable");
-        ovenDivEl.classList.remove("available");
-        ovenDivEl.classList.add("unavailable");
         multiplierInfoEl.classList.remove("hidden");
-
+        if (donut._multiplierCount<1) {
+            ovenDivEl.classList.remove("available");
+            ovenDivEl.classList.add("unavailable");
+        }
     }
     if (Math.round(donut._count) <= Math.round(donut._autoClickCost)) {
         bakerEl.classList.remove("available");    
         bakerEl.classList.add("unavailable");
-        bakerDivEl.classList.remove("available");
-        bakerDivEl.classList.add("unavailable");
+        // bakerDivEl.classList.remove("available");
+        // bakerDivEl.classList.add("unavailable");
         autoClickerInfoEl.classList.remove("hidden");
 
     }
@@ -92,17 +96,19 @@ multiplierPurchaseBtn.addEventListener("click", () => {
     if (Math.round(donut._count) <= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("available");    
         ovenEl.classList.add("unavailable");
-        ovenDivEl.classList.remove("available");
-        ovenDivEl.classList.add("unavailable");
+        // ovenDivEl.classList.remove("available");
+        // ovenDivEl.classList.add("unavailable");
         multiplierInfoEl.classList.remove("hidden");
 
     }
     if (Math.round(donut._count) <= Math.round(donut._autoClickCost)) {
         bakerEl.classList.remove("available");    
         bakerEl.classList.add("unavailable");
-        bakerDivEl.classList.remove("available");
-        bakerDivEl.classList.add("unavailable");
         autoClickerInfoEl.classList.remove("hidden");
+        if(donut._autoClickCount<1){
+            bakerDivEl.classList.remove("available");
+            bakerDivEl.classList.add("unavailable");
+        }
 
     }
 })
@@ -135,11 +141,17 @@ resetBtn.addEventListener("click", () => {
 })
 
 setInterval(() => {
+    //top line of code activates the autoClicker when the autoClickCount >= 1
+    seconds ++;
     donut._count += donut._autoClickCount * donut._makeValue;
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
     makeValueEl.innerHTML = "Click Value: " + (Math.round(donut._makeValue * 1000000) / 1000000);
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
+    //When finished this should make a random event occur
+    if (seconds == Math.floor(Math.random()*100+30)){
+        alert("Surprise!")
+    }
 
     if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("unavailable");    
@@ -147,7 +159,6 @@ setInterval(() => {
         ovenDivEl.classList.remove("unavailable");
         ovenDivEl.classList.add("available");
         multiplierInfoEl.classList.add("hidden");
-
     }
     if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
         bakerEl.classList.remove("unavailable");    
@@ -155,7 +166,6 @@ setInterval(() => {
         bakerDivEl.classList.remove("unavailable");
         bakerDivEl.classList.add("available");
         autoClickerInfoEl.classList.add("hidden");
-
     }
 }, 1000);
 

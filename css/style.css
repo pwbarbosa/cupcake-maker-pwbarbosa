@@ -4,6 +4,7 @@
 * {
   margin: 0;
 }
+
 body {
   background-image: url("/images/Bakery\ 1.jpg");
   background-size: 250vh;
@@ -102,6 +103,10 @@ header h1 {
     text-align: center;
   }
 
+  #reset:hover {
+    transform: scale(1.1);
+  }
+
   .container {
     cursor: url("/images/OvenMit.png");
   }
@@ -120,6 +125,7 @@ header h1 {
   }
 
   #multiplierInfo {
+    pointer-events: none;
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
@@ -131,6 +137,7 @@ header h1 {
     cursor:pointer;
   }
   #countDiv {
+    pointer-events: none;
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
@@ -149,6 +156,7 @@ header h1 {
   }
 
   #autoClickerInfo {
+    pointer-events: none;
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
