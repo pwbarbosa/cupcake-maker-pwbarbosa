@@ -30,6 +30,14 @@ header h1 {
     left: 4%;
 }
 
+.randomEventPrompt {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    z-index: 999;
+}
+
 #randomClickImg:hover {
     transform: scale(1.05);
 }
@@ -37,13 +45,6 @@ header h1 {
 
 #randomClickImg:active {
     transform: rotate(45deg);
-}
-#randomClickImg {
-    cursor: pointer;
-}
-
-#randomClickValueDiv {
-    pointer-events: none;
 }
 
 .randomClickButton0 {
@@ -93,7 +94,7 @@ header h1 {
     position: absolute;
     z-index: 999998;
     top: 55%;
-    right: 0%;
+    right: 5%;
 }
 
 .randomClickButton2 div {
@@ -101,7 +102,7 @@ header h1 {
     width: 3%;
     z-index: 999999;
     top: 77%;
-    right: 8%;
+    right: 13.5%;
 }
 
 .randomClickButton3 img {
@@ -120,7 +121,7 @@ header h1 {
     left: 5%;
 }
 
-.container {
+#container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;

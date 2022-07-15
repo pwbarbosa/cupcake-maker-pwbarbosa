@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/layout.css">
   </head>
   <body>
-    <header>
+    <header class="headerNoBlur">
       <h1 id="pageTitle">Carlo's Cupcakes</h1>
       <div id="inspirationDrp" class="dropdown">
         <button class="dropbtn">Our Inspiration</button>
@@ -34,13 +34,16 @@
     <div class="hidden" id="reset">
       <h3>Reset</h3>
     </div>
+    <div class="hidden" id="randomEventPrompt">
+      <h3>Click The Extra Cupcakes!</h3>
+    </div>
     <section class="hidden"  id="randomClickButton">
       <img id="randomClickImg" src="/images/CupcakeNoSprinkles.png" alt="Cupcake Clicker Button">
       <div id="randomClickValueDiv">
         <h3 id="randomClickValue">100</h3>
       </div>
     </section>
-    <div class="container">
+    <div id="container">
       <button class="hidden" id="clickStormButton">Launch Cupcake <br> Blowout Sale!!!</button>
       <section id="clickMultiplierSection">
         <img class="unavailable" id="multiplierPurchase" src="/images/CartoonOven.png" alt="Oven Button">
