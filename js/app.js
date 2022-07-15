@@ -17,6 +17,7 @@ const multiplierInfoEl = document.querySelector("#multiplierInfo");
 const autoClickerCostRemainderEl = document.querySelector("#autoClickerCostRemainder");
 const multiplierCostRemainderEl = document.querySelector("#multiplierCostRemainder");
 const clickStormButtonEl = document.querySelector("#clickStormButton"); 
+const randomClickButtonEl = document.querySelector("#randomClickButton");
 const donut = new Donut();
 let seconds = 0;
 let secondsLeft = 0;
@@ -118,8 +119,17 @@ const clickStormBtn = document.querySelector("#clickStormButton");
 clickStormBtn.addEventListener("click", () => {
     clickStormButtonEl.classList.remove("clickStormButtonClass");
     clickStormButtonEl.classList.add("hidden");
-    stormClick = true;
-    secondsLeft = 60;
+    randomClickButtonEl.removeAttribute("class");
+    randomClickButtonEl.classList.add(`randomClickButton${Math.floor(Math.random()*4)}`)
+    setTimeout(() => {
+        randomClickButtonEl.removeAttribute("class");
+        randomClickButtonEl.classList.add("hidden")
+    }, 60000);
+})
+const randomClickBtn = document.querySelector("#randomClickImg");
+randomClickBtn.addEventListener("click", () => {
+    randomClickButtonEl.removeAttribute("class");
+    randomClickButtonEl.classList.add(`randomClickButton${Math.floor(Math.random()*4)}`)
 })
 
 const resetBtn = document.querySelector("#reset");
@@ -159,15 +169,10 @@ setInterval(() => {
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     //When finished this should make a random event occur
-    if (seconds == Math.floor(Math.random()*100+30) && secondsLeft<=0){
+    if (seconds == 10 && secondsLeft<=0){
         clickStormButtonEl.classList.remove("hidden");
         clickStormButtonEl.classList.add("clickStormButtonClass");
-    }
-    
-    while (stormClick == true && secondsLeft >= 0) {
-        if
-    }
-    
+    }    
 }, 1000);
 
 
