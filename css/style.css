@@ -3,6 +3,7 @@
 
 * {
   margin: 0;
+  cursor: url("/images/OvenMit.cur"), auto;
 }
 
 body {
@@ -10,6 +11,11 @@ body {
   background-size: 250vh;
   /* background-color: black; */
   background-repeat: no-repeat;
+  cursor: url("/images/OvenMit.cur"), auto;
+}
+
+.bodyBlurred > * > * > *{
+  filter: blur(4px);
 }
 
 header {
@@ -66,6 +72,10 @@ header h1 {
     display: block;
   }
 
+  .dropdown-content a{
+    cursor: pointer;
+  }
+
   .dropdown-content a:hover {
     transform: scale(1.2);
   }
@@ -98,9 +108,24 @@ header h1 {
     cursor:pointer;
     background-color: rgb(248, 191, 201) ;
     color: purple;
-    border: solid rgb(252, 240, 240) 15px;
+    border: solid rgb(252, 240, 240) 7.5px;
     border-radius: 5px;
     text-align: center;
+    padding: 5px;
+  }
+
+  #randomClickValueDiv {
+    cursor:pointer;
+    background-color: rgb(248, 191, 201) ;
+    color: purple;
+    border: solid rgb(252, 240, 240) 7.5px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+  }
+
+  #reset h3 {
+    pointer-events: none;
   }
 
   #reset:hover {
@@ -111,17 +136,24 @@ header h1 {
     cursor: url("/images/OvenMit.png");
   }
 
-  #make:hover {
-    transform: scale(1.05);
-  }
   #multiplierPurchase {
     cursor: pointer;
   }
+
+  #multiplierPurchase.available:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+#multiplierPurchase.available:active {
+  transform: scale(1) rotate(-10deg);
+}
+
   #multiplierDiv {
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
+    padding: 10px;
   }
 
   #multiplierInfo {
@@ -136,16 +168,35 @@ header h1 {
   #make {
     cursor:pointer;
   }
+
+  #make:hover {
+    transform: scale(1.05);
+  }
+
+  #make:active {
+    transform: scale(1) rotate(45deg);
+
+  }
+
   #countDiv {
     pointer-events: none;
     background-color: rgb(248, 191, 201) ;
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
+    padding: 10px;
   }
 
   #autoClickerSection img {
     cursor: pointer;
+  }
+
+  #autoClickerSection img.available:hover {
+    transform: scale(1.02) rotate(-10deg);
+  }
+
+#autoClickerSection img.available:active {
+  transform: scale(1) rotate(10deg);
   }
 
   #autoClickerDiv {
@@ -153,6 +204,7 @@ header h1 {
     color: purple;
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
+    padding: 10px;
   }
 
   #autoClickerInfo {
@@ -162,4 +214,18 @@ header h1 {
     border: solid rgb(252, 240, 240) 15px;
     border-radius: 5px;
     padding: 10px;
+  }
+
+  .clickStormButtonClass {
+    color: white;
+    background: radial-gradient(circle, rgba(255,98,98,1) .005%, rgba(255,0,0,1) 50%);    border: none;
+    padding: 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    border: solid rgb(252, 240, 240) 15px;
+    filter: none;
   }

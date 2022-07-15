@@ -30,6 +30,96 @@ header h1 {
     left: 4%;
 }
 
+#randomClickImg:hover {
+    transform: scale(1.05);
+}
+
+
+#randomClickImg:active {
+    transform: rotate(45deg);
+}
+#randomClickImg {
+    cursor: pointer;
+}
+
+#randomClickValueDiv {
+    pointer-events: none;
+}
+
+.randomClickButton0 {
+    position: absolute;
+    z-index: 999998;
+    top: 10%;
+    left: 8%;
+}
+
+.randomClickButton0 img {
+    width: 20%
+}
+
+.randomClickButton0 div {
+    position: absolute;
+    width: 3%;
+    z-index: 999999;
+    top: 50%;
+    left: 7%;
+}
+
+.randomClickButton1 {
+    /* position: absolute;
+    z-index: 999998;
+    top: 10%;
+    right: 8%; */
+}
+
+.randomClickButton1 img {
+    width: 20%;
+    position: absolute;
+    z-index: 999998;
+    top: 10%;
+    right: 8%;
+}
+
+.randomClickButton1 div {
+    position: absolute;
+    width: 3%;
+    z-index: 999999;
+    top: 31.5%;
+    right: 16%;
+}
+
+.randomClickButton2 img {
+    width: 20%;
+    position: absolute;
+    z-index: 999998;
+    top: 55%;
+    right: 0%;
+}
+
+.randomClickButton2 div {
+    position: absolute;
+    width: 3%;
+    z-index: 999999;
+    top: 77%;
+    right: 8%;
+}
+
+.randomClickButton3 img {
+    width: 20%;
+    position: absolute;
+    z-index: 999998;
+    top: 55%;
+    left: -2%;
+}
+
+.randomClickButton3 div {
+    position: absolute;
+    width: 3%;
+    z-index: 999999;
+    top: 77%;
+    left: 5%;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -55,10 +145,6 @@ header h1 {
     position: relative;
     left: 15%;
     top: 5%;
-}
-
-#multiplierPurchase.available:hover {
-    transform: scale(1.1);
 }
 
 #multiplierDiv {
@@ -135,12 +221,6 @@ header h1 {
     top: 10%;
 }
 
-#autoClickerSection img.available:hover {
-    transform: scale(1.02);
-}
-
-
-
 #autoClickerDiv {
     position: absolute;
     width: 15%;
@@ -158,4 +238,12 @@ header h1 {
 
 #autoClickerSection img.unavailable:hover #autoClickerInfo {
     display: grid;
+}
+
+.clickStormButtonClass{
+    cursor: pointer;
+    position: absolute;
+    z-index: 99999;
+    top: 30%;
+    left: 26%;
 }
