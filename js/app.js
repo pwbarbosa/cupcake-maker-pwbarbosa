@@ -81,8 +81,6 @@ clickerPurchaseBtn.addEventListener("click", () => {
     if (Math.round(donut._count) <= Math.round(donut._autoClickCost)) {
         bakerEl.classList.remove("available");    
         bakerEl.classList.add("unavailable");
-        // bakerDivEl.classList.remove("available");
-        // bakerDivEl.classList.add("unavailable");
         autoClickerInfoEl.classList.remove("hidden");
 
     }
@@ -103,8 +101,6 @@ multiplierPurchaseBtn.addEventListener("click", () => {
     if (Math.round(donut._count) <= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("available");    
         ovenEl.classList.add("unavailable");
-        // ovenDivEl.classList.remove("available");
-        // ovenDivEl.classList.add("unavailable");
         multiplierInfoEl.classList.remove("hidden");
 
     }

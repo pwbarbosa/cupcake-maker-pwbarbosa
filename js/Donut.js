@@ -11,9 +11,6 @@ class Donut{
     get count() {
         return this._count;
     }
-    get aCCount() {
-        return this._aCCount;
-    }
 
     click() {
         this._count += this._makeValue;
