@@ -21,6 +21,7 @@ const randomClickButtonEl = document.querySelector("#randomClickButton");
 const randomClickValueEl = document.querySelector("#randomClickValue");
 const randomEventPromptEl = document.querySelector("#randomEventPrompt")
 const containerEl = document.querySelector("#container");
+const getStartedEl = document.querySelector("#getStarted");
 const donut = new Donut();
 let seconds = 0;
 let secondsLeft = 0;
@@ -40,6 +41,7 @@ makeBtn.addEventListener("click", () => {
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";    
+    getStartedEl.classList.add("hidden");
     if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("unavailable");    
         ovenEl.classList.add("available");
@@ -186,6 +188,8 @@ resetBtn.addEventListener("click", () => {
         bakerDivEl.classList.add("unavailable");
         autoClickerInfoEl.classList.remove("hidden");
         resetBtn.classList.add("hidden");
+        getStartedEl.removeAttribute("class");
+
         seconds = 0;
 })
 

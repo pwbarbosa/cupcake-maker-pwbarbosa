@@ -30,6 +30,13 @@ header h1 {
     left: 4%;
 }
 
+#getStarted {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    z-index: 888;
+}
+
 .randomEventPrompt {
     text-align: center;
     position: absolute;
