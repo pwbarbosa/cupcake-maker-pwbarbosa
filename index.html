@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/layout.css">
   </head>
   <body>
-    <header>
+    <header class="headerNoBlur">
       <h1 id="pageTitle">Carlo's Cupcakes</h1>
       <div id="inspirationDrp" class="dropdown">
         <button class="dropbtn">Our Inspiration</button>
@@ -20,19 +20,26 @@
       <div id="abtDev" class="dropdown">
         <button class="dropbtn">The Developer</button>
         <div class="dropdown-content">
-          <a href="pwbarbosa.github.io">Pedro Barbosa</a>
-          <a href="https://www.linkedin.com/in/pwbarbosa/">LinkedIn</a>
+          <a target="_blank" href="pwbarbosa.github.io">Pedro Barbosa</a>
+          <a target="_blank" href="https://www.linkedin.com/in/pwbarbosa/">LinkedIn</a>
         </div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">About Us</button>
         <div class="dropdown-content">
-          <p>Some information about the Company: <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit blanditiis corrupti beatae impedit modi exercitationem incidunt, accusantium, maiores sunt dolores quia ex dolorem vitae nisi fugiat, suscipit officiis expedita. Similique!</p>
+          <h3>Carlo's Bakery</h3>
+          <p>Carlo's family moved from the south of Italy when he was very young. He and his grandmother would spend ours baking treats together. As he grew, so did his baking renown. People especially loved his cupcakes, so he opened this bakery just to keep up with the demand.</p>
         </div>
       </div>
     </header>
+    <div id="getStarted">
+      <h1>Click The Cupcake to Get Started!</h1>
+    </div>
     <div class="hidden" id="reset">
       <h3>Reset</h3>
+    </div>
+    <div class="hidden" id="randomEventPrompt">
+      <h3>Click The Extra Cupcakes!</h3>
     </div>
     <section class="hidden"  id="randomClickButton">
       <img id="randomClickImg" src="/images/CupcakeNoSprinkles.png" alt="Cupcake Clicker Button">
@@ -40,7 +47,7 @@
         <h3 id="randomClickValue">100</h3>
       </div>
     </section>
-    <div class="container">
+    <div id="container">
       <button class="hidden" id="clickStormButton">Launch Cupcake <br> Blowout Sale!!!</button>
       <section id="clickMultiplierSection">
         <img class="unavailable" id="multiplierPurchase" src="/images/CartoonOven.png" alt="Oven Button">

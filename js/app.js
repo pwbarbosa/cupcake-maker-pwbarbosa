@@ -18,10 +18,14 @@ const autoClickerCostRemainderEl = document.querySelector("#autoClickerCostRemai
 const multiplierCostRemainderEl = document.querySelector("#multiplierCostRemainder");
 const clickStormButtonEl = document.querySelector("#clickStormButton"); 
 const randomClickButtonEl = document.querySelector("#randomClickButton");
+const randomClickValueEl = document.querySelector("#randomClickValue");
+const randomEventPromptEl = document.querySelector("#randomEventPrompt")
+const containerEl = document.querySelector("#container");
+const getStartedEl = document.querySelector("#getStarted");
 const donut = new Donut();
 let seconds = 0;
 let secondsLeft = 0;
-let stormClick = false;
+let randomClickValue = 0;
 
 countEl.innerHTML = "Cupcakes: " + donut.count;
 autoClickCountEl.innerHTML = "Chef Level: " + donut._autoClickCount;
@@ -37,6 +41,7 @@ makeBtn.addEventListener("click", () => {
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";    
+    getStartedEl.classList.add("hidden");
     if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
         ovenEl.classList.remove("unavailable");    
         ovenEl.classList.add("available");
@@ -121,15 +126,41 @@ clickStormBtn.addEventListener("click", () => {
     clickStormButtonEl.classList.add("hidden");
     randomClickButtonEl.removeAttribute("class");
     randomClickButtonEl.classList.add(`randomClickButton${Math.floor(Math.random()*4)}`)
+    randomClickValue = Math.floor(Math.random()*91 + 10);
+    randomClickValueEl.innerText = randomClickValue;
+    randomEventPromptEl.removeAttribute("class");
+    randomEventPromptEl.classList.add("randomEventPrompt");
+    containerEl.removeAttribute("class");
+    secondsLeft = 30;
     setTimeout(() => {
         randomClickButtonEl.removeAttribute("class");
-        randomClickButtonEl.classList.add("hidden")
-    }, 60000);
+        randomClickButtonEl.classList.add("hidden");
+        randomEventPromptEl.removeAttribute("class");
+        randomEventPromptEl.classList.add("hidden");
+    }, 30000);
 })
 const randomClickBtn = document.querySelector("#randomClickImg");
 randomClickBtn.addEventListener("click", () => {
+    donut._count += randomClickValue;
+    if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
+        ovenEl.classList.remove("unavailable");    
+        ovenEl.classList.add("available");
+        multiplierInfoEl.classList.add("hidden");
+        ovenDivEl.classList.remove("unavailable");
+        ovenDivEl.classList.add("available");
+    }
+    if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
+        bakerEl.classList.remove("unavailable");    
+        bakerEl.classList.add("available");
+        bakerDivEl.classList.remove("unavailable");
+        bakerDivEl.classList.add("available");
+        autoClickerInfoEl.classList.add("hidden");
+    }
     randomClickButtonEl.removeAttribute("class");
-    randomClickButtonEl.classList.add(`randomClickButton${Math.floor(Math.random()*4)}`)
+    randomClickButtonEl.classList.add(`randomClickButton${Math.floor(Math.random()*4)}`);
+    randomClickValue = Math.floor(Math.random()*91 + 10);
+    randomClickValueEl.innerText = randomClickValue;
+
 })
 
 const resetBtn = document.querySelector("#reset");
@@ -157,6 +188,8 @@ resetBtn.addEventListener("click", () => {
         bakerDivEl.classList.add("unavailable");
         autoClickerInfoEl.classList.remove("hidden");
         resetBtn.classList.add("hidden");
+        getStartedEl.removeAttribute("class");
+
         seconds = 0;
 })
 
@@ -168,10 +201,24 @@ setInterval(() => {
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
-    //When finished this should make a random event occur
-    if (seconds == 10 && secondsLeft<=0){
+    if (seconds == Math.floor(Math.random()*200+30) && secondsLeft<=0){
         clickStormButtonEl.classList.remove("hidden");
         clickStormButtonEl.classList.add("clickStormButtonClass");
+        containerEl.classList.add("containerBlur");
+    }
+    if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
+        ovenEl.classList.remove("unavailable");    
+        ovenEl.classList.add("available");
+        multiplierInfoEl.classList.add("hidden");
+        ovenDivEl.classList.remove("unavailable");
+        ovenDivEl.classList.add("available");
+    }
+    if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
+        bakerEl.classList.remove("unavailable");    
+        bakerEl.classList.add("available");
+        bakerDivEl.classList.remove("unavailable");
+        bakerDivEl.classList.add("available");
+        autoClickerInfoEl.classList.add("hidden");
     }    
 }, 1000);
 
