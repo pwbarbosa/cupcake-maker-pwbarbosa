@@ -7,11 +7,11 @@
 }
 
 body {
-  background-image: url("/images/Bakery\ 1.jpg");
+  background-image: url("./images/Bakery\ 1.jpg");
   background-size: 250vh;
-  /* background-color: black; */
+  background-color: rgb(207, 143, 59);
   background-repeat: no-repeat;
-  cursor: url("/images/OvenMit.cur"), auto;
+  cursor: url("./images/OvenMit.cur"), auto;
 }
 
 .containerBlur > * > * {
