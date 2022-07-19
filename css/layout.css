@@ -3,6 +3,7 @@
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
     scrollbar-color: transparent; 
+    min-height: 100vh;
 }
 
 *::-webkit-scrollbar {
