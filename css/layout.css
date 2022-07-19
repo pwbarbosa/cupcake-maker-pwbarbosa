@@ -1,7 +1,7 @@
 * {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
-    overflow-y: visible; 
+    overflow-y: scroll; 
     scrollbar-color: transparent;
 }
 
@@ -10,7 +10,6 @@
 }
 body {
     width: 100%;
-    min-height: 100vh;
 }
 
 header {
