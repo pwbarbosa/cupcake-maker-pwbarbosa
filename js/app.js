@@ -197,7 +197,7 @@ setInterval(() => {
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
     multiplierCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._multiplierCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
-    if (seconds == Math.floor(Math.random()*200+30) && secondsLeft<=0){
+    if (seconds == Math.floor(Math.random()*100+15) && secondsLeft<=0 && donut._count >= 1){
         clickStormButtonEl.classList.remove("hidden");
         clickStormButtonEl.classList.add("clickStormButtonClass");
         containerEl.classList.add("containerBlur");
