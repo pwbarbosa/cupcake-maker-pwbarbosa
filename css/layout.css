@@ -1,5 +1,13 @@
 body {
     width: 100%;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: 0px; /* for Firefox */
+    overflow-y: scroll; 
+    scrollbar-color: transparent;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 header {
     display: grid;
@@ -184,7 +192,7 @@ header h1 {
 }
 
 #make {
-    width: 30vw;
+    width: 25vw;
     grid-row-start: 1;
     grid-row-end: 3;
     margin: 0 auto;
