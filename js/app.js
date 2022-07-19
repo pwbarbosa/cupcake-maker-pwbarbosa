@@ -133,6 +133,7 @@ clickStormBtn.addEventListener("click", () => {
         randomClickButtonEl.classList.add("hidden");
         randomEventPromptEl.removeAttribute("class");
         randomEventPromptEl.classList.add("hidden");
+        seconds = 0;
     }, 30000);
 })
 const randomClickBtn = document.querySelector("#randomClickImg");
@@ -192,6 +193,7 @@ resetBtn.addEventListener("click", () => {
 setInterval(() => {
     //top line of code activates the autoClicker when the autoClickCount >= 1
     seconds ++;
+    //currently not functional, might add timer utilizing this at a later time
     secondsLeft--;
     donut._count += donut._autoClickCount * donut._makeValue;
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
