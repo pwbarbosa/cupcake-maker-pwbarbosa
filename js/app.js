@@ -23,6 +23,10 @@ const randomEventPromptEl = document.querySelector("#randomEventPrompt")
 const containerEl = document.querySelector("#container");
 const getStartedEl = document.querySelector("#getStarted");
 const donut = new Donut();
+const ding = new Audio("../sounds/ding.wav");
+const pop = new Audio("../sounds/popShort.wav");
+const resetWhoosh = new Audio("../sounds/whoosh.wav");
+const chuckle = new Audio("../sounds/chuckle.wav")
 let seconds = 0;
 let secondsLeft = 0;
 let randomClickValue = 0;
@@ -36,6 +40,8 @@ makeValueEl.innerHTML = "Click Value: " + (Math.round(donut._makeValue * 1000000
 
 const makeBtn = document.querySelector("#make");
 makeBtn.addEventListener("click", () => {
+    pop.currentTime = 0;
+    pop.play();
     donut.click();
     resetBtn.classList.remove("hidden");
     countEl.innerText = "Cupcakes: " + Math.round(donut._count);
@@ -63,6 +69,8 @@ makeBtn.addEventListener("click", () => {
 const clickerPurchaseBtn = document.querySelector("#autoClickerPuchase");
 clickerPurchaseBtn.addEventListener("click", () => {
     if (Math.round(donut._count) >= Math.round(donut._autoClickCost)) {
+        chuckle.currentTime = 0;
+        chuckle.play();
         donut.purchaseAutoClicker();
     }
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
@@ -90,6 +98,8 @@ clickerPurchaseBtn.addEventListener("click", () => {
 const multiplierPurchaseBtn = document.querySelector("#multiplierPurchase");
 multiplierPurchaseBtn.addEventListener("click", () => {
     if (Math.round(donut._count) >= Math.round(donut._multiplierCost)) {
+        ding.currentTime = 0;
+        ding.play();
         donut.purchaseMultiplier();
     }
     autoClickerCostRemainderEl.innerHTML = "<em>You only need " + (Math.round(donut._autoClickCost) - Math.round(donut._count)) + " more cupcakes to upgrade!</em>";
@@ -162,32 +172,33 @@ randomClickBtn.addEventListener("click", () => {
 
 const resetBtn = document.querySelector("#reset");
 resetBtn.addEventListener("click", () => {
-        donut._count = 0;
-        donut._autoClickCount = 0;
-        donut._autoClickCost = 100;
-        donut._multiplierCount = 0;
-        donut._multiplierCost = 10;
-        donut._makeValue = 1;
-        countEl.innerHTML = "Cupcakes: " + donut.count;
-        autoClickCountEl.innerHTML = "Chef Level: " + donut._autoClickCount;
-        clickerCostEl.innerHTML = "Upgrade Cost: " + donut._autoClickCost;
-        multiplierCountEl.innerHTML = "Oven Level: " + donut._multiplierCount;
-        multiplierCostEl.innerHTML = "Upgrade Cost: " + donut._multiplierCost;
-        makeValueEl.innerHTML = "Click Value: " + (Math.round(donut._makeValue * 1000000) / 1000000);
-        ovenEl.classList.remove("available");    
-        ovenEl.classList.add("unavailable");
-        ovenDivEl.classList.remove("available");
-        ovenDivEl.classList.add("unavailable");
-        multiplierInfoEl.classList.remove("hidden");
-        bakerEl.classList.remove("available");    
-        bakerEl.classList.add("unavailable");
-        bakerDivEl.classList.remove("available");
-        bakerDivEl.classList.add("unavailable");
-        autoClickerInfoEl.classList.remove("hidden");
-        resetBtn.classList.add("hidden");
-        getStartedEl.removeAttribute("class");
-
-        seconds = 0;
+    resetWhoosh.currentTime = 0;
+    resetWhoosh.play();    
+    donut._count = 0;
+    donut._autoClickCount = 0;
+    donut._autoClickCost = 100;
+    donut._multiplierCount = 0;
+    donut._multiplierCost = 10;
+    donut._makeValue = 1;
+    countEl.innerHTML = "Cupcakes: " + donut.count;
+    autoClickCountEl.innerHTML = "Chef Level: " + donut._autoClickCount;
+    clickerCostEl.innerHTML = "Upgrade Cost: " + donut._autoClickCost;
+    multiplierCountEl.innerHTML = "Oven Level: " + donut._multiplierCount;
+    multiplierCostEl.innerHTML = "Upgrade Cost: " + donut._multiplierCost;
+    makeValueEl.innerHTML = "Click Value: " + (Math.round(donut._makeValue * 1000000) / 1000000);
+    ovenEl.classList.remove("available");    
+    ovenEl.classList.add("unavailable");
+    ovenDivEl.classList.remove("available");
+    ovenDivEl.classList.add("unavailable");
+    multiplierInfoEl.classList.remove("hidden");
+    bakerEl.classList.remove("available");    
+    bakerEl.classList.add("unavailable");
+    bakerDivEl.classList.remove("available");
+    bakerDivEl.classList.add("unavailable");
+    autoClickerInfoEl.classList.remove("hidden");
+    resetBtn.classList.add("hidden");
+    getStartedEl.removeAttribute("class");
+    seconds = 0;
 })
 
 setInterval(() => {

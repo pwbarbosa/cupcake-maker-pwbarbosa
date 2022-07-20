@@ -4,6 +4,7 @@ body {
     scrollbar-width: 0px; /* for Firefox */
     overflow-y: scroll; 
     scrollbar-color: transparent;
+    
 }
 
 body::-webkit-scrollbar {
